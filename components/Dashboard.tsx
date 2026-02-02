@@ -101,7 +101,7 @@ export default function Dashboard() {
       total: leads.length,
       newThisWeek: leads.filter(l => new Date(l.created_at) >= sevenDaysAgo).length,
       totalMessages: leads.reduce((acc, l) => acc + (l.historique_conversation?.length || 0), 0),
-      rdvPris: leads.filter(l => l.rdv_pris).length,
+      rdvPris: leads.filter(l => l.statut === 'rdv_pris').length,
     };
   };
 

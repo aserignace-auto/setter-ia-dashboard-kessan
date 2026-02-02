@@ -1,15 +1,12 @@
 export interface Lead {
-  id: number;
+  id: string;
   instagram_id: string;
-  nom: string | null;
   plateforme: string;
+  nom: string | null;
   statut: 'nouveau' | 'en_cours' | 'qualifie' | 'rdv_pris' | 'perdu';
   historique_conversation: any[];
   nb_relances: number;
-  derniere_relance: string | null;
-  rdv_pris: boolean;
-  date_rdv: string | null;
-  notes: string | null;
+  dernier_message_lead: string | null;
   created_at: string;
   updated_at: string;
 }

@@ -54,7 +54,7 @@ function CircularGauge({ value, label, color }: GaugeProps) {
 export default function EfficiencyGauges({ leads }: EfficiencyGaugesProps) {
   const total = leads.length || 1;
   const qualified = leads.filter(l => l.statut === 'qualifie' || l.statut === 'rdv_pris').length;
-  const booked = leads.filter(l => l.rdv_pris).length;
+  const booked = leads.filter(l => l.statut === 'rdv_pris').length;
 
   const qualificationRate = Math.round((qualified / total) * 100);
   const conversionRate = Math.round((booked / total) * 100);
