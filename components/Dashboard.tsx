@@ -88,11 +88,6 @@ export default function Dashboard() {
     };
   }, []);
 
-  const handleRefresh = () => {
-    setIsLoading(true);
-    fetchLeads();
-  };
-
   const getConversationArray = (historique: any): any[] => {
     if (!historique) return [];
     if (Array.isArray(historique)) return historique;
@@ -146,7 +141,6 @@ export default function Dashboard() {
         )}
 
         <Header
-          onRefresh={handleRefresh}
           isConnected={isConnected}
           isLoading={isLoading}
         />

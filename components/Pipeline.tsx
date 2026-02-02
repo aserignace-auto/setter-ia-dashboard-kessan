@@ -27,7 +27,7 @@ export default function Pipeline({ leads }: PipelineProps) {
   return (
     <div className="luxury-card p-6 bg-gradient-to-br from-brown-dark to-brown opacity-0 animate-fade-up"
          style={{ animationDelay: '400ms' }}>
-      <h3 className="text-lg font-semibold text-beige-light mb-6">Pipeline de Conversion</h3>
+      <h3 className="text-lg font-semibold text-taupe mb-6">Pipeline de Conversion</h3>
 
       <div className="grid grid-cols-4 gap-4">
         {stageCounts.map((stage, index) => (
@@ -36,7 +36,7 @@ export default function Pipeline({ leads }: PipelineProps) {
               <div className="text-3xl font-bold gold-gradient-text mb-2">
                 {stage.count}
               </div>
-              <div className="text-sm text-beige-light opacity-80">
+              <div className="text-sm text-taupe">
                 {stage.label}
               </div>
               <div className="mt-3 h-1.5 bg-brown rounded-full overflow-hidden">
