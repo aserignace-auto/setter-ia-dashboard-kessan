@@ -100,7 +100,7 @@ export default function Dashboard() {
     return {
       total: leads.length,
       newThisWeek: leads.filter(l => new Date(l.created_at) >= sevenDaysAgo).length,
-      totalMessages: leads.reduce((acc, l) => acc + (l.historique_conversation?.length || 0), 0),
+      totalMessages: leads.reduce((acc, l) => acc + (l.historique_conversation?.filter((msg: any) => msg.role === 'agent').length || 0), 0),
       rdvPris: leads.filter(l => l.statut === 'rdv_pris').length,
     };
   };
