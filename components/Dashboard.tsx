@@ -50,13 +50,13 @@ export default function Dashboard() {
   // Abonnement Supabase Realtime
   useEffect(() => {
     const channel = supabase
-      .channel('leads_charles_changes')
+      .channel('leads_kessan_changes')
       .on(
         'postgres_changes',
         {
           event: '*',
           schema: 'public',
-          table: 'leads_charles',
+          table: 'leads_kessan',
         },
         (payload) => {
           if (payload.eventType === 'INSERT') {
